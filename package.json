@@ -1,0 +1,63 @@
+{
+  "name": "contracts",
+  "version": "1.0.0",
+  "description": "Smart contract implementation for x402 Token Launchpad.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "coverage": "hardhat coverage",
+    "deploy:x402": "hardhat run scripts/deploy-x402-token.ts",
+    "deploy:x402:bsc-testnet": "hardhat run scripts/deploy-x402-token.ts --network bscTestnet",
+    "deploy:x402:bsc": "hardhat run scripts/deploy-x402-token.ts --network bsc",
+    "deploy:x402:base-sepolia": "hardhat run scripts/deploy-x402-token.ts --network baseSepolia",
+    "deploy:x402:base": "hardhat run scripts/deploy-x402-token.ts --network base",
+    "deploy:x402:verify": "VERIFY_CONTRACTS=true hardhat run scripts/deploy-x402-token.ts --network",
+    "deploy:x402:custom": "hardhat run scripts/deploy-x402-token.ts --network",
+    "deploy:examples": "hardhat run scripts/deploy-x402-example.ts",
+    "deploy:local": "hardhat run scripts/deploy.ts --network localhost",
+    "deploy:bsc-testnet": "hardhat run scripts/deploy-bsc-testnet.ts --network bscTestnet",
+    "deploy:base-sepolia": "hardhat run scripts/deploy.ts --network baseSepolia",
+    "pre-deploy-check": "hardhat run scripts/pre-deploy-check.ts --network bscTestnet",
+    "check-balance": "hardhat run scripts/check-balance.ts --network bscTestnet",
+    "get-deployment": "ts-node scripts/get-deployment.ts bsc-testnet",
+    "get-deployment:json": "ts-node scripts/get-deployment.ts bsc-testnet --json",
+    "node": "hardhat node",
+    "clean": "hardhat clean",
+    "typechain": "hardhat typechain",
+    "verify": "hardhat verify",
+    "lint": "prettier --write 'contracts/**/*.sol' && prettier --write 'test/**/*.ts' && prettier --write 'scripts/**/*.ts'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.11",
+    "@openzeppelin/hardhat-upgrades": "^3.9.1",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.9.1",
+    "chai": "^4.3.10",
+    "ethers": "^6.15.0",
+    "hardhat": "^2.22.17",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "@openzeppelin/contracts-upgradeable": "^5.4.0",
+    "dotenv": "^17.2.3"
+  }
+}
